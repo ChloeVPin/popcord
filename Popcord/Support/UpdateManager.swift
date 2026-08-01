@@ -127,11 +127,19 @@ public final class UpdateManager: ObservableObject {
         }.resume()
     }
     
+    #if DEBUG
+    public let isDebugMode: Bool = true
+    #else
+    public let isDebugMode: Bool = false
+    #endif
+    
     public func performInAppUpdate() {
         guard let release = latestRelease, !isDownloading else { return }
         isDownloading = true
         updateError = nil
-        checkStatusMessage = "Downloading Popcord \(release.tagName)..."
+        
+        AppLogger.app.info("Perform update triggered. Source directory is safe. Target bundle: \(Bundle.main.bundlePath)")
+        checkStatusMessage = isDebugMode ? "Debug Mode: Testing updater (Source files safe)..." : "Downloading Popcord \(release.tagName)..."
         
         let downloadURLString = release.zipballUrl ?? "https://github.com/ChloeVPin/popcord/archive/refs/tags/\(release.tagName).zip"
         
