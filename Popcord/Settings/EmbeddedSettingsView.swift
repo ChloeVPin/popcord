@@ -141,20 +141,36 @@ public struct EmbeddedSettingsView: View {
                                 
                                 Spacer()
                                 
-                                Button {
-                                    updateManager.checkForUpdates()
-                                } label: {
-                                    if updateManager.isChecking {
-                                        ProgressView().controlSize(.small)
-                                    } else {
-                                        Text("Check Now")
-                                            .font(.system(size: 11, weight: .medium))
+                                if updateManager.updateAvailable {
+                                    Button {
+                                        updateManager.performInAppUpdate()
+                                    } label: {
+                                        if updateManager.isDownloading {
+                                            ProgressView().controlSize(.small)
+                                        } else {
+                                            Text("Update Now")
+                                                .font(.system(size: 11, weight: .bold))
+                                        }
                                     }
+                                    .buttonStyle(.borderedProminent)
+                                    .tint(Color.discordBlurple)
+                                    .controlSize(.small)
+                                    .focusable(false)
+                                } else {
+                                    Button {
+                                        updateManager.checkForUpdates()
+                                    } label: {
+                                        if updateManager.isChecking {
+                                            ProgressView().controlSize(.small)
+                                        } else {
+                                            Text("Check Now")
+                                                .font(.system(size: 11, weight: .medium))
+                                        }
+                                    }
+                                    .buttonStyle(.bordered)
+                                    .controlSize(.small)
+                                    .focusable(false)
                                 }
-                                .buttonStyle(.borderedProminent)
-                                .tint(Color.discordBlurple)
-                                .controlSize(.small)
-                                .focusable(false)
                             }
                             
                             if let release = updateManager.latestRelease {
@@ -191,18 +207,6 @@ public struct EmbeddedSettingsView: View {
                                             RoundedRectangle(cornerRadius: 6, style: .continuous)
                                                 .fill(Color.primary.opacity(0.04))
                                         )
-                                    }
-                                    
-                                    HStack {
-                                        Button {
-                                            updateManager.openReleasePage()
-                                        } label: {
-                                            Label(updateManager.updateAvailable ? "Download on GitHub" : "View on GitHub", systemImage: "arrow.up.right.square")
-                                                .font(.system(size: 11, weight: .medium))
-                                        }
-                                        .buttonStyle(.bordered)
-                                        .controlSize(.small)
-                                        .focusable(false)
                                     }
                                 }
                             }

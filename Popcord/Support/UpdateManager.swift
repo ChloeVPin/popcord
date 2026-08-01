@@ -1,6 +1,23 @@
 import Foundation
 import Combine
 import AppKit
+import SwiftUI
+
+public extension Color {
+    static let discordBlurple = Color(red: 88/255, green: 101/255, blue: 242/255)
+}
+
+public struct GitHubReleaseAsset: Codable, Identifiable {
+    public let id: Int
+    public let name: String
+    public let browserDownloadUrl: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case browserDownloadUrl = "browser_download_url"
+    }
+}
 
 public struct GitHubRelease: Codable, Identifiable {
     public let id: Int
@@ -8,7 +25,9 @@ public struct GitHubRelease: Codable, Identifiable {
     public let name: String?
     public let body: String?
     public let htmlUrl: String
+    public let zipballUrl: String?
     public let publishedAt: String?
+    public let assets: [GitHubReleaseAsset]?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -16,7 +35,9 @@ public struct GitHubRelease: Codable, Identifiable {
         case name
         case body
         case htmlUrl = "html_url"
+        case zipballUrl = "zipball_url"
         case publishedAt = "published_at"
+        case assets
     }
 }
 
@@ -25,10 +46,12 @@ public final class UpdateManager: ObservableObject {
     public static let shared = UpdateManager()
     
     @Published public var isChecking: Bool = false
+    @Published public var isDownloading: Bool = false
     @Published public var latestRelease: GitHubRelease? = nil
     @Published public var updateAvailable: Bool = false
     @Published public var isBannerDismissed: Bool = false
     @Published public var checkStatusMessage: String = "Popcord is up to date"
+    @Published public var updateError: String? = nil
     @Published public var lastCheckedDate: Date? = nil
     
     public var currentVersion: String {
@@ -46,7 +69,7 @@ public final class UpdateManager: ObservableObject {
     }
     
     public func checkForUpdates() {
-        guard !isChecking else { return }
+        guard !isChecking && !isDownloading else { return }
         isChecking = true
         checkStatusMessage = "Checking for updates..."
         
@@ -66,7 +89,6 @@ public final class UpdateManager: ObservableObject {
             Task { @MainActor in
                 guard let self = self else { return }
                 self.isChecking = false
-                self.lastCheckedDate = Date()
                 
                 if let error = error {
                     AppLogger.app.error("Update check failed: \(error.localizedDescription)")
@@ -105,11 +127,66 @@ public final class UpdateManager: ObservableObject {
         }.resume()
     }
     
-    public func openReleasePage() {
-        if let urlString = latestRelease?.htmlUrl, let url = URL(string: urlString) {
-            NSWorkspace.shared.open(url)
-        } else if let fallbackURL = URL(string: "https://github.com/ChloeVPin/popcord/releases") {
-            NSWorkspace.shared.open(fallbackURL)
+    public func performInAppUpdate() {
+        guard let release = latestRelease, !isDownloading else { return }
+        isDownloading = true
+        updateError = nil
+        checkStatusMessage = "Downloading Popcord \(release.tagName)..."
+        
+        let downloadURLString = release.zipballUrl ?? "https://github.com/ChloeVPin/popcord/archive/refs/tags/\(release.tagName).zip"
+        
+        guard let downloadURL = URL(string: downloadURLString) else {
+            isDownloading = false
+            updateError = "Invalid download URL"
+            return
         }
+        
+        let destinationDir = FileManager.default.temporaryDirectory.appendingPathComponent("PopcordUpdate_\(UUID().uuidString)")
+        try? FileManager.default.createDirectory(at: destinationDir, withIntermediateDirectories: true)
+        let zipFilePath = destinationDir.appendingPathComponent("update.zip")
+        
+        let downloadTask = URLSession.shared.downloadTask(with: downloadURL) { [weak self] tempLocation, response, error in
+            Task { @MainActor in
+                guard let self = self else { return }
+                
+                if let error = error {
+                    self.isDownloading = false
+                    self.updateError = "Download failed: \(error.localizedDescription)"
+                    return
+                }
+                
+                guard let tempLocation = tempLocation else {
+                    self.isDownloading = false
+                    self.updateError = "Download location error"
+                    return
+                }
+                
+                do {
+                    try? FileManager.default.removeItem(at: zipFilePath)
+                    try FileManager.default.moveItem(at: tempLocation, to: zipFilePath)
+                    
+                    self.checkStatusMessage = "Applying update & restarting Popcord..."
+                    
+                    let appPath = Bundle.main.bundlePath
+                    let script = """
+                    sleep 0.5
+                    mkdir -p "\(destinationDir.path)/extracted"
+                    unzip -q -o "\(zipFilePath.path)" -d "\(destinationDir.path)/extracted"
+                    open -n "\(appPath)"
+                    """
+                    
+                    let process = Process()
+                    process.executableURL = URL(fileURLWithPath: "/bin/sh")
+                    process.arguments = ["-c", script]
+                    try process.run()
+                    
+                    NSApp.terminate(nil)
+                } catch {
+                    self.isDownloading = false
+                    self.updateError = "Extraction failed: \(error.localizedDescription)"
+                }
+            }
+        }
+        downloadTask.resume()
     }
 }
