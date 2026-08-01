@@ -196,14 +196,11 @@ public struct EmbeddedSettingsView: View {
                                     
                                     if showingChangelog, let body = release.body {
                                         ScrollView {
-                                            Text(LocalizedStringKey(body))
-                                                .font(.system(size: 11.5))
-                                                .foregroundStyle(.primary.opacity(0.9))
-                                                .lineSpacing(3)
+                                            MarkdownView(markdown: body)
                                                 .frame(maxWidth: .infinity, alignment: .leading)
                                                 .padding(10)
                                         }
-                                        .frame(maxHeight: 120)
+                                        .frame(maxHeight: 140)
                                         .background(
                                             RoundedRectangle(cornerRadius: 6, style: .continuous)
                                                 .fill(Color.primary.opacity(0.04))

@@ -27,6 +27,7 @@
 		A10000192C59A00100000001 /* PerformanceOptimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000192C59A00100000001 /* PerformanceOptimizer.swift */; };
 		A10000202C59A00100000001 /* UpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000202C59A00100000001 /* UpdateManager.swift */; };
 		A10000212C59A00100000001 /* UpdateBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000212C59A00100000001 /* UpdateBannerView.swift */; };
+		A10000222C59A00100000001 /* MarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000222C59A00100000001 /* MarkdownView.swift */; };
 		A10000112C59A00100000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10000112C59A00100000001 /* Assets.xcassets */; };
 		A10000122C59A00100000001 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F10000122C59A00100000001 /* WebKit.framework */; };
 		A10000132C59A00100000001 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F10000132C59A00100000001 /* Carbon.framework */; };
@@ -55,6 +56,7 @@
 		F10000192C59A00100000001 /* PerformanceOptimizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceOptimizer.swift; sourceTree = "<group>"; };
 		F10000202C59A00100000001 /* UpdateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateManager.swift; sourceTree = "<group>"; };
 		F10000212C59A00100000001 /* UpdateBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBannerView.swift; sourceTree = "<group>"; };
+		F10000222C59A00100000001 /* MarkdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownView.swift; sourceTree = "<group>"; };
 		F10000112C59A00100000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F10000122C59A00100000001 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		F10000132C59A00100000001 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
@@ -176,6 +178,7 @@
 				F10000192C59A00100000001 /* PerformanceOptimizer.swift */,
 				F10000202C59A00100000001 /* UpdateManager.swift */,
 				F10000212C59A00100000001 /* UpdateBannerView.swift */,
+				F10000222C59A00100000001 /* MarkdownView.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				A10000192C59A00100000001 /* PerformanceOptimizer.swift in Sources */,
 				A10000202C59A00100000001 /* UpdateManager.swift in Sources */,
 				A10000212C59A00100000001 /* UpdateBannerView.swift in Sources */,
+				A10000222C59A00100000001 /* MarkdownView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
