@@ -73,58 +73,47 @@ public final class UpdateManager: ObservableObject {
         isChecking = true
         checkStatusMessage = "Checking for updates..."
         
-        guard let url = URL(string: repoURLString) else {
-            isChecking = false
-            checkStatusMessage = "Invalid update URL"
-            return
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.setValue("application/vnd.github.v3+json", forHTTPHeaderField: "Accept")
-        request.setValue("Popcord-App", forHTTPHeaderField: "User-Agent")
-        request.timeoutInterval = 10
-        
-        URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
-            Task { @MainActor in
-                guard let self = self else { return }
-                self.isChecking = false
-                
-                if let error = error {
-                    AppLogger.app.error("Update check failed: \(error.localizedDescription)")
-                    self.checkStatusMessage = "Popcord is up to date ✓"
-                    return
-                }
-                
-                guard let data = data,
-                      let httpResponse = response as? HTTPURLResponse,
-                      httpResponse.statusCode == 200 else {
-                    self.checkStatusMessage = "Popcord is up to date ✓"
-                    return
-                }
-                
-                do {
-                    let decoder = JSONDecoder()
-                    let release = try decoder.decode(GitHubRelease.self, from: data)
-                    self.latestRelease = release
-                    
-                    let remoteVersion = release.tagName.replacingOccurrences(of: "v", with: "").trimmingCharacters(in: .whitespacesAndNewlines)
-                    let currentVersionClean = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0").trimmingCharacters(in: .whitespacesAndNewlines)
-                    
-                    if remoteVersion.compare(currentVersionClean, options: .numeric) == .orderedDescending {
-                        self.updateAvailable = true
-                        self.isBannerDismissed = false
-                        self.checkStatusMessage = "New Update Available: \(release.tagName)!"
-                    } else {
-                        self.updateAvailable = false
-                        self.checkStatusMessage = "Popcord is up to date ✓"
-                    }
-                } catch {
-                    AppLogger.app.error("Failed to parse release JSON: \(error)")
-                    self.checkStatusMessage = "Popcord is up to date ✓"
-                }
+        Task {
+            defer { self.isChecking = false }
+            
+            guard let url = URL(string: repoURLString) else {
+                self.checkStatusMessage = "Invalid update URL"
+                return
             }
-        }.resume()
+            
+            var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+            request.setValue("application/vnd.github.v3+json", forHTTPHeaderField: "Accept")
+            request.setValue("Popcord-App", forHTTPHeaderField: "User-Agent")
+            request.timeoutInterval = 10
+            
+            do {
+                let (data, response) = try await URLSession.shared.data(for: request)
+                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                    self.checkStatusMessage = "Popcord is up to date ✓"
+                    return
+                }
+                
+                let decoder = JSONDecoder()
+                let release = try decoder.decode(GitHubRelease.self, from: data)
+                self.latestRelease = release
+                
+                let remoteVersion = release.tagName.replacingOccurrences(of: "v", with: "").trimmingCharacters(in: .whitespacesAndNewlines)
+                let currentVersionClean = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0").trimmingCharacters(in: .whitespacesAndNewlines)
+                
+                if remoteVersion.compare(currentVersionClean, options: .numeric) == .orderedDescending {
+                    self.updateAvailable = true
+                    self.isBannerDismissed = false
+                    self.checkStatusMessage = "New Update Available: \(release.tagName)!"
+                } else {
+                    self.updateAvailable = false
+                    self.checkStatusMessage = "Popcord is up to date ✓"
+                }
+            } catch {
+                AppLogger.app.error("Update check failed: \(error.localizedDescription)")
+                self.checkStatusMessage = "Popcord is up to date ✓"
+            }
+        }
     }
     
     #if DEBUG
@@ -153,48 +142,33 @@ public final class UpdateManager: ObservableObject {
         try? FileManager.default.createDirectory(at: destinationDir, withIntermediateDirectories: true)
         let zipFilePath = destinationDir.appendingPathComponent("update.zip")
         
-        let downloadTask = URLSession.shared.downloadTask(with: downloadURL) { [weak self] tempLocation, response, error in
-            Task { @MainActor in
-                guard let self = self else { return }
+        Task {
+            do {
+                let (tempLocation, _) = try await URLSession.shared.download(from: downloadURL)
                 
-                if let error = error {
-                    self.isDownloading = false
-                    self.updateError = "Download failed: \(error.localizedDescription)"
-                    return
-                }
+                try? FileManager.default.removeItem(at: zipFilePath)
+                try FileManager.default.moveItem(at: tempLocation, to: zipFilePath)
                 
-                guard let tempLocation = tempLocation else {
-                    self.isDownloading = false
-                    self.updateError = "Download location error"
-                    return
-                }
+                self.checkStatusMessage = "Applying update & restarting Popcord..."
                 
-                do {
-                    try? FileManager.default.removeItem(at: zipFilePath)
-                    try FileManager.default.moveItem(at: tempLocation, to: zipFilePath)
-                    
-                    self.checkStatusMessage = "Applying update & restarting Popcord..."
-                    
-                    let appPath = Bundle.main.bundlePath
-                    let script = """
-                    sleep 0.5
-                    mkdir -p "\(destinationDir.path)/extracted"
-                    unzip -q -o "\(zipFilePath.path)" -d "\(destinationDir.path)/extracted"
-                    open -n "\(appPath)"
-                    """
-                    
-                    let process = Process()
-                    process.executableURL = URL(fileURLWithPath: "/bin/sh")
-                    process.arguments = ["-c", script]
-                    try process.run()
-                    
-                    NSApp.terminate(nil)
-                } catch {
-                    self.isDownloading = false
-                    self.updateError = "Extraction failed: \(error.localizedDescription)"
-                }
+                let appPath = Bundle.main.bundlePath
+                let script = """
+                sleep 0.5
+                mkdir -p "\(destinationDir.path)/extracted"
+                unzip -q -o "\(zipFilePath.path)" -d "\(destinationDir.path)/extracted"
+                open -n "\(appPath)"
+                """
+                
+                let process = Process()
+                process.executableURL = URL(fileURLWithPath: "/bin/sh")
+                process.arguments = ["-c", script]
+                try process.run()
+                
+                NSApp.terminate(nil)
+            } catch {
+                self.isDownloading = false
+                self.updateError = "Update failed: \(error.localizedDescription)"
             }
         }
-        downloadTask.resume()
     }
 }

@@ -22,16 +22,16 @@
 		A100000D2C59A00100000001 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100000D2C59A00100000001 /* OnboardingView.swift */; };
 		A100000F2C59A00100000001 /* AppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100000F2C59A00100000001 /* AppLogger.swift */; };
 		A10000102C59A00100000001 /* URLValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000102C59A00100000001 /* URLValidator.swift */; };
+		A10000112C59A00100000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10000112C59A00100000001 /* Assets.xcassets */; };
+		A10000122C59A00100000001 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F10000122C59A00100000001 /* WebKit.framework */; };
+		A10000132C59A00100000001 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F10000132C59A00100000001 /* Carbon.framework */; };
+		A10000142C59A00100000001 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F10000142C59A00100000001 /* UserNotifications.framework */; };
 		A10000172C59A00100000001 /* EmbeddedSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000172C59A00100000001 /* EmbeddedSettingsView.swift */; };
 		A10000182C59A00100000001 /* EmbeddedOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000182C59A00100000001 /* EmbeddedOnboardingView.swift */; };
 		A10000192C59A00100000001 /* PerformanceOptimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000192C59A00100000001 /* PerformanceOptimizer.swift */; };
 		A10000202C59A00100000001 /* UpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000202C59A00100000001 /* UpdateManager.swift */; };
 		A10000212C59A00100000001 /* UpdateBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000212C59A00100000001 /* UpdateBannerView.swift */; };
 		A10000222C59A00100000001 /* MarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000222C59A00100000001 /* MarkdownView.swift */; };
-		A10000112C59A00100000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10000112C59A00100000001 /* Assets.xcassets */; };
-		A10000122C59A00100000001 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F10000122C59A00100000001 /* WebKit.framework */; };
-		A10000132C59A00100000001 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F10000132C59A00100000001 /* Carbon.framework */; };
-		A10000142C59A00100000001 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F10000142C59A00100000001 /* UserNotifications.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,18 +51,18 @@
 		F100000D2C59A00100000001 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		F100000F2C59A00100000001 /* AppLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogger.swift; sourceTree = "<group>"; };
 		F10000102C59A00100000001 /* URLValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLValidator.swift; sourceTree = "<group>"; };
-		F10000172C59A00100000001 /* EmbeddedSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedSettingsView.swift; sourceTree = "<group>"; };
-		F10000182C59A00100000001 /* EmbeddedOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedOnboardingView.swift; sourceTree = "<group>"; };
-		F10000192C59A00100000001 /* PerformanceOptimizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceOptimizer.swift; sourceTree = "<group>"; };
-		F10000202C59A00100000001 /* UpdateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateManager.swift; sourceTree = "<group>"; };
-		F10000212C59A00100000001 /* UpdateBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBannerView.swift; sourceTree = "<group>"; };
-		F10000222C59A00100000001 /* MarkdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownView.swift; sourceTree = "<group>"; };
 		F10000112C59A00100000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F10000122C59A00100000001 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		F10000132C59A00100000001 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		F10000142C59A00100000001 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		F10000152C59A00100000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F10000162C59A00100000001 /* Popcord.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Popcord.entitlements; sourceTree = "<group>"; };
+		F10000172C59A00100000001 /* EmbeddedSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedSettingsView.swift; sourceTree = "<group>"; };
+		F10000182C59A00100000001 /* EmbeddedOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedOnboardingView.swift; sourceTree = "<group>"; };
+		F10000192C59A00100000001 /* PerformanceOptimizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceOptimizer.swift; sourceTree = "<group>"; };
+		F10000202C59A00100000001 /* UpdateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateManager.swift; sourceTree = "<group>"; };
+		F10000212C59A00100000001 /* UpdateBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBannerView.swift; sourceTree = "<group>"; };
+		F10000222C59A00100000001 /* MarkdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +206,8 @@
 			);
 			buildRules = (
 			);
+			dependencies = (
+			);
 			name = Popcord;
 			productName = Popcord;
 			productReference = B10000012C59A00100000001 /* Popcord.app */;
@@ -219,7 +221,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 2700;
 				TargetAttributes = {
 					T10000012C59A00100000001 = {
 						CreatedOnToolsVersion = 15.4;
@@ -301,6 +303,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -344,6 +347,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -368,6 +372,7 @@
 		X10000032C59A00100000001 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -390,18 +395,26 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 			};
 			name = Debug;
 		};
 		X10000042C59A00100000001 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -424,12 +437,17 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 			};
 			name = Release;
 		};
