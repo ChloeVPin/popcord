@@ -118,5 +118,10 @@ public struct PanelContentView: View {
         }
         .frame(width: appState.panelWidth, height: appState.panelHeight)
         .background(Material.regular)
+        .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .stroke(Color.primary.opacity(0.12), lineWidth: 1)
+        )
     }
 }
