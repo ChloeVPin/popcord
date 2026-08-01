@@ -84,10 +84,10 @@ public struct EmbeddedSettingsView: View {
                         .focusable(false)
                 }
                 
-                Section("Updates") {
+                Section(header: Text("App Shell Updates"), footer: Text("Popcord updates govern the native macOS companion. Discord itself updates live within WebKit.")) {
                     HStack {
                         VStack(alignment: .leading, spacing: 1) {
-                            Text("Popcord \(updateManager.currentVersion)")
+                            Text("Popcord App \(updateManager.currentVersion)")
                                 .font(.system(size: 12, weight: .semibold))
                             Text(updateManager.checkStatusMessage)
                                 .font(.system(size: 10.5))
