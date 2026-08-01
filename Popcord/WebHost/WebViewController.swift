@@ -39,6 +39,7 @@ public final class WebViewController: NSObject, ObservableObject, WKNavigationDe
         configuration.mediaTypesRequiringUserActionForPlayback = []
         
         webView = WKWebView(frame: .zero, configuration: configuration)
+        webView.underPageBackgroundColor = .clear
         webView.navigationDelegate = self
         webView.uiDelegate = self
         

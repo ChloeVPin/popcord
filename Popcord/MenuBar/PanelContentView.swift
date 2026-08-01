@@ -13,48 +13,26 @@ public struct PanelContentView: View {
             VStack(spacing: 0) {
                 // Clean Header Bar
                 HStack(spacing: 10) {
-                    // Navigation
-                    HStack(spacing: 4) {
-                        Button {
-                            webVC.goBack()
-                        } label: {
-                            Image(systemName: "chevron.left")
-                        }
-                        .disabled(!webVC.canGoBack)
-                        .focusable(false)
-                        .help("Back")
-                        
-                        Button {
-                            webVC.goForward()
-                        } label: {
-                            Image(systemName: "chevron.right")
-                        }
-                        .disabled(!webVC.canGoForward)
-                        .focusable(false)
-                        .help("Forward")
-                        
+                    // Reload & Home Actions
+                    HStack(spacing: 8) {
                         Button {
                             webVC.reload()
                         } label: {
                             Image(systemName: "arrow.clockwise")
                         }
+                        .buttonStyle(.plain)
                         .focusable(false)
-                        .help("Reload")
+                        .help("Reload Page")
+                        
+                        Button {
+                            appState.navigateToHome()
+                        } label: {
+                            Image(systemName: "house.fill")
+                        }
+                        .buttonStyle(.plain)
+                        .focusable(false)
+                        .help("Discord Home")
                     }
-                    .buttonStyle(.plain)
-                    
-                    Divider()
-                        .frame(height: 14)
-                    
-                    // Home (Discord App Base)
-                    Button {
-                        appState.navigateToHome()
-                    } label: {
-                        Image(systemName: "house.fill")
-                    }
-                    .buttonStyle(.plain)
-                    .focusable(false)
-                    .help("Discord Home")
                     
                     Spacer()
                     
@@ -82,7 +60,7 @@ public struct PanelContentView: View {
                             }
                         } label: {
                             Image(systemName: showingSettings ? "gearshape.fill" : "gearshape")
-                                .foregroundStyle(showingSettings ? .indigo : .primary)
+                                .foregroundStyle(showingSettings ? Color.discordBlurple : .primary)
                         }
                         .buttonStyle(.plain)
                         .focusable(false)

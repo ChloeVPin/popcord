@@ -127,28 +127,28 @@ public final class MenuBarController: NSObject, NSWindowDelegate {
     
     private func createPopcordIcon(badgeCount: Int) -> NSImage {
         let size = NSSize(width: 22, height: 22)
-        
-        guard let sfSymbol = NSImage(systemSymbolName: "bubble.left.and.bubble.right.fill", accessibilityDescription: "Popcord") else {
-            return NSImage(size: size)
-        }
-        
         let image = NSImage(size: size)
         image.lockFocus()
         
-        let context = NSGraphicsContext.current?.cgContext
-        context?.saveGState()
-        
-        let symbolRect = NSRect(x: 2, y: 3, width: 18, height: 16)
-        sfSymbol.draw(in: symbolRect)
+        if let sfSymbol = NSImage(systemSymbolName: "bubble.left.and.bubble.right.fill", accessibilityDescription: "Popcord") {
+            sfSymbol.isTemplate = true
+            sfSymbol.draw(in: NSRect(x: 2, y: 2, width: 17, height: 15))
+        }
         
         if badgeCount > 0 {
-            let badgeRect = NSRect(x: 13, y: 13, width: 8, height: 8)
+            // Cutout ring for maximum visibility on status bar
+            let ringRect = NSRect(x: 12, y: 12, width: 9.5, height: 9.5)
+            NSColor.windowBackgroundColor.set()
+            let ringPath = NSBezierPath(ovalIn: ringRect)
+            ringPath.fill()
+            
+            // Vivid System Red Badge Dot
+            let badgeRect = NSRect(x: 13, y: 13, width: 7.5, height: 7.5)
             NSColor.systemRed.set()
             let badgePath = NSBezierPath(ovalIn: badgeRect)
             badgePath.fill()
         }
         
-        context?.restoreGState()
         image.unlockFocus()
         image.isTemplate = (badgeCount == 0)
         return image
