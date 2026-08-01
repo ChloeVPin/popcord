@@ -33,6 +33,21 @@ Popcord operates as a lightweight, native macOS host wrapper around Apple's WebK
 
 ---
 
+## First Launch & macOS Gatekeeper Notice
+
+Because Popcord is an open-source app built from source without a paid Apple Developer ID certificate ($99/yr), macOS Gatekeeper flags browser downloads with a web quarantine alert (*"Popcord is damaged and can't be opened"*).
+
+To clear the quarantine flag and launch Popcord:
+
+1. Move **Popcord.app** into your `/Applications` folder.
+2. Open **Terminal** and execute:
+   ```bash
+   xattr -cr /Applications/Popcord.app
+   ```
+3. Open **Popcord**!
+
+---
+
 ## Core Capabilities
 
 | Feature | Technical Implementation |
