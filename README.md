@@ -2,15 +2,22 @@
 
 # Popcord
 
-<img src="Popcord/Assets.xcassets/AppIcon.appiconset/icon_512x512.png" width="140" height="140" alt="Popcord macOS App Icon" />
+<br />
 
-<p><strong>A Native macOS Menu Bar Companion for Discord</strong></p>
+<img src="Popcord/Assets.xcassets/AppIcon.appiconset/icon_512x512.png" width="128" height="128" alt="Popcord macOS App Icon" />
 
-[![Build Status](https://img.shields.io/badge/BUILD-PASSING-00C853?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/ChloeVPin/popcord/actions)
-[![macOS Platform](https://img.shields.io/badge/MACOS-14.0%2B-007ACC?style=for-the-badge&logo=apple&logoColor=white)](https://developer.apple.com/macos/)
-[![Swift Version](https://img.shields.io/badge/SWIFT-5.0%2B-F05138?style=for-the-badge&logo=swift&logoColor=white)](https://swift.org)
-[![License](https://img.shields.io/badge/LICENSE-MIT-7C4DFF?style=for-the-badge)](LICENSE)
-[![Auto Updates](https://img.shields.io/badge/SHELL_UPDATES-IN--APP-5865F2?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ChloeVPin/popcord/releases)
+<br />
+<br />
+
+<p><strong>Native macOS Menu Bar Companion for Discord</strong></p>
+
+<p align="center">
+  <a href="https://github.com/ChloeVPin/popcord/actions"><img src="https://img.shields.io/github/actions/workflow/status/ChloeVPin/popcord/ci.yml?branch=main&label=CI&style=flat-square&color=00C853" alt="Build Status" /></a>
+  <a href="https://developer.apple.com/macos/"><img src="https://img.shields.io/badge/macOS-14.0%2B-007ACC?style=flat-square&logo=apple&logoColor=white" alt="macOS" /></a>
+  <a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-5.0%2B-F05138?style=flat-square&logo=swift&logoColor=white" alt="Swift" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-7C4DFF?style=flat-square" alt="License" /></a>
+  <a href="https://github.com/ChloeVPin/popcord/releases"><img src="https://img.shields.io/badge/Updates-In--App%20Auto-5865F2?style=flat-square&logo=github&logoColor=white" alt="Updates" /></a>
+</p>
 
 </div>
 
@@ -37,7 +44,7 @@ Popcord operates as a lightweight, native macOS host wrapper around Apple's WebK
 | **Native Notifications** | Intercepts WebKit notifications to dispatch macOS system alerts |
 | **Unread Indicator** | High-contrast status bar unread badge dot |
 | **Media Hardware Support** | Full WebCore audio, video, camera, and microphone entitlement access |
-| ** HIG Form Interface** | Single-line grouped SwiftUI settings layout |
+| **HIG Form Interface** | Single-line grouped SwiftUI settings layout |
 
 ---
 
