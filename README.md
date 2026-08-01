@@ -12,11 +12,11 @@
 <p><strong>Native macOS Menu Bar Companion for Discord</strong></p>
 
 <p align="center">
-  <a href="https://github.com/ChloeVPin/popcord/actions"><img src="https://img.shields.io/github/actions/workflow/status/ChloeVPin/popcord/ci.yml?branch=main&label=CI&style=flat-square&color=00C853" alt="Build Status" /></a>
-  <a href="https://developer.apple.com/macos/"><img src="https://img.shields.io/badge/macOS-14.0%2B-007ACC?style=flat-square&logo=apple&logoColor=white" alt="macOS" /></a>
-  <a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-5.0%2B-F05138?style=flat-square&logo=swift&logoColor=white" alt="Swift" /></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-7C4DFF?style=flat-square" alt="License" /></a>
-  <a href="https://github.com/ChloeVPin/popcord/releases"><img src="https://img.shields.io/badge/Updates-In--App%20Auto-5865F2?style=flat-square&logo=github&logoColor=white" alt="Updates" /></a>
+  <a href="https://github.com/ChloeVPin/popcord/actions"><img src="https://img.shields.io/github/actions/workflow/status/ChloeVPin/popcord/ci.yml?branch=main" alt="CI Status" /></a>
+  <a href="https://developer.apple.com/macos/"><img src="https://img.shields.io/badge/platform-macOS_14.0+-007ACC?logo=apple&logoColor=white" alt="Platform" /></a>
+  <a href="https://swift.org"><img src="https://img.shields.io/badge/swift-5.0+-F05138?logo=swift&logoColor=white" alt="Swift" /></a>
+  <a href="https://github.com/ChloeVPin/popcord/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ChloeVPin/popcord?color=7C4DFF" alt="License" /></a>
+  <a href="https://github.com/ChloeVPin/popcord/releases"><img src="https://img.shields.io/github/v/release/ChloeVPin/popcord?color=5865F2&label=release" alt="Release" /></a>
 </p>
 
 </div>
