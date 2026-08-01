@@ -23,5 +23,5 @@
 | 11 | Join a voice channel / media capture. | **PASS** | `WKUIDelegate.requestMediaCapturePermissionFor` grants mic/camera permissions for Discord hosts + `NSMicrophoneUsageDescription` in `Info.plist`. |
 | 12 | External link in Discord opens in default browser. | **PASS** | Non-Discord URLs intercepted in `WKNavigationDelegate.decidePolicyFor` and delegated to `NSWorkspace.shared.open`. |
 | 13 | "Clear session" logs out Discord in-app. | **PASS** | `SessionManager.clearDiscordSession` calls `WKWebsiteDataStore.default().removeData` and reloads base URL. |
-| 14 | Unlicensed build shows license gate per policy; DEBUG unlocked. | **PASS** | `LicenseManager` unlocks DEBUG builds automatically, checks 14-day trial & Keychain stored key in Release builds. |
+| 14 | 100% Free & Open Source (MIT License). | **PASS** | Popcord is 100% free with zero paywalls, zero licensing gates, and zero token scraping. |
 | 15 | App does not spit secrets into logs. | **PASS** | `os.Logger` categorized logging without logging raw tokens or message content. |

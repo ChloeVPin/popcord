@@ -27,21 +27,28 @@ Popcord/
 │   ├── Notifications/
 │   │   └── NotificationManager.swift # UNUserNotificationCenter delegate & mention alerts
 │   ├── Settings/
-│   │   ├── SettingsView.swift  # SwiftUI Settings tabbed window
+│   │   ├── EmbeddedSettingsView.swift # Native macOS HIG Form settings view
 │   │   └── SessionManager.swift # SMAppService launch at login & session wiping
 │   ├── Onboarding/
-│   │   └── OnboardingView.swift # 5-step native onboarding flow
-│   ├── Licensing/
-│   │   └── LicenseManager.swift # Keychain-backed license store & trial manager
+│   │   └── EmbeddedOnboardingView.swift # Embedded native onboarding flow
 │   ├── Support/
 │   │   ├── AppLogger.swift     # os.Logger logging instances
-│   │   └── URLValidator.swift  # Discord channel URL parser & normalizer
+│   │   ├── URLValidator.swift  # Discord channel URL parser & normalizer
+│   │   ├── UpdateManager.swift # Async/await background release fetcher & in-app updates
+│   │   ├── UpdateBannerView.swift # Native update notification banner
+│   │   ├── MarkdownView.swift  # Block level Markdown renderer for release notes
+│   │   └── PerformanceOptimizer.swift # Background CPU/RAM throttling & video pause handlers
 │   ├── Info.plist              # LSUIElement accessory setting + camera/mic usage strings
 │   └── Popcord.entitlements    # Sandboxed entitlements (network, files, camera, mic)
-└── docs/
-    ├── VERSION_AUDIT.md        # Preflight toolchain audit
-    ├── TECHNICAL_DECISIONS.md  # Architectural rationales
-    └── ACCEPTANCE.md           # Completed QA verification matrix
+├── .github/workflows/
+│   └── ci.yml                 # GitHub Actions automated build verification workflow
+├── docs/
+│   ├── VERSION_AUDIT.md        # Preflight toolchain audit
+│   ├── TECHNICAL_DECISIONS.md  # Architectural rationales
+│   └── ACCEPTANCE.md           # Completed QA verification matrix
+├── CONTRIBUTING.md            # Guidelines for open source contributors
+├── LICENSE                    # MIT License
+└── README.md                  # Main repository presentation & documentation
 ```
 
 ---
@@ -49,12 +56,12 @@ Popcord/
 ## 2. Where to Make Common Changes
 
 | Task | Location | Key Code Structure |
-| --- | --- | --- |
+| :--- | :--- | :--- |
 | **Change Default Global Hotkey** | [HotkeyManager.swift](file:///Users/chloe/Developer/popcord/Popcord/Hotkey/HotkeyManager.swift) | `PopcordShortcut.defaultShortcut` |
 | **Modify Primary URL Defaults** | [URLValidator.swift](file:///Users/chloe/Developer/popcord/Popcord/Support/URLValidator.swift) | `URLValidator.defaultPrimaryURL` |
 | **Adjust Panel Dimensions** | [AppState.swift](file:///Users/chloe/Developer/popcord/Popcord/App/AppState.swift) | `panelWidth`, `panelHeight`, min bounds (360x480) |
 | **Update Web JS Notification Bridge** | [WebNotificationBridge.swift](file:///Users/chloe/Developer/popcord/Popcord/WebHost/WebNotificationBridge.swift) | `WebNotificationBridge.injectedUserScript` |
-| **Update License Store / Price** | [LicenseManager.swift](file:///Users/chloe/Developer/popcord/Popcord/Licensing/LicenseManager.swift) | `LicenseManager.displayPrice`, `LocalLicenseStore` |
+| **Modify Update & Release Logic** | [UpdateManager.swift](file:///Users/chloe/Developer/popcord/Popcord/Support/UpdateManager.swift) | `UpdateManager.checkForUpdates()`, `performInAppUpdate()` |
 
 ---
 
@@ -62,9 +69,9 @@ Popcord/
 
 - [x] **M0: Skeleton:** Xcode project, Info.plist, status item, panel host shell, settings shell.
 - [x] **M1: Web Host:** `WKWebView` persistent data store, toolbar controls, resizable panel + size persistence.
-- [x] **M2: Primary Channel:** URL validation, deep-linking landing, 5-step onboarding flow.
-- [x] **M3: Hotkey & UX Polish:** Global Carbon shortcut, anchored utility `NSPanel`, dark/light HIG styling.
-- [x] **M4: Notifications & Badge:** Web Notification bridge, local notifications, status item red badge.
+- [x] **M2: Primary Channel:** URL validation, deep-linking landing, native onboarding flow.
+- [x] **M3: Hotkey & UX Polish:** Global Carbon shortcut, anchored utility `NSPanel`, adaptive Light/Dark HIG styling.
+- [x] **M4: Notifications & Badge:** Web Notification bridge, local notifications, high-contrast status item red badge.
 - [x] **M5: Media & Hardening:** Mic/camera media capture permission delegate, file uploads/downloads, external link routing.
-- [x] **M6: Licensing & Shell:** Modular Keychain `LicenseManager`, trial mode, `SMAppService` launch-at-login.
-- [x] **M7: Documentation & QA:** Complete test suite matrix in `docs/ACCEPTANCE.md`, preflight audit in `docs/VERSION_AUDIT.md`.
+- [x] **M6: In-App Automatic Updates:** Background release check, in-app zip extraction, automatic app patching and relaunch.
+- [x] **M7: Documentation & QA:** Complete test suite matrix in `docs/ACCEPTANCE.md`, CI workflow in `.github/workflows/ci.yml`.
