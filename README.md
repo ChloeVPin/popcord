@@ -4,7 +4,7 @@
 
 <br />
 
-<img src="Popcord/Assets.xcassets/AppIcon.appiconset/icon_512x512.png" width="128" height="128" alt="Popcord macOS App Icon" />
+<img src="docs/popcord-macos-icon.png" width="128" height="128" alt="Popcord macOS App Icon" />
 
 <br />
 <br />
