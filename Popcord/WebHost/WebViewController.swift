@@ -25,7 +25,6 @@ public final class WebViewController: NSObject, ObservableObject, WKNavigationDe
     private func setupWebView() {
         let configuration = WKWebViewConfiguration()
         configuration.websiteDataStore = .default()
-        configuration.processPool = PerformanceOptimizer.shared.sharedProcessPool
         
         // Setup Content Controller with Bridge & Performance Optimizations
         let userContentController = WKUserContentController()

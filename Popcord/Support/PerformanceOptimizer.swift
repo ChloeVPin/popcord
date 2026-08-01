@@ -5,9 +5,6 @@ import WebKit
 public final class PerformanceOptimizer {
     public static let shared = PerformanceOptimizer()
     
-    /// Shared WKProcessPool for maximum memory reuse across web view instances
-    public let sharedProcessPool = WKProcessPool()
-    
     private init() {}
     
     /// UserScript injected to handle background animation throttling and memory savings
