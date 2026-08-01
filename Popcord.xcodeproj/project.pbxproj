@@ -1,0 +1,456 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000012C59A00100000001 /* PopcordApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000012C59A00100000001 /* PopcordApp.swift */; };
+		A10000022C59A00100000001 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000022C59A00100000001 /* AppState.swift */; };
+		A10000032C59A00100000001 /* MenuBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000032C59A00100000001 /* MenuBarController.swift */; };
+		A10000042C59A00100000001 /* PopcordPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000042C59A00100000001 /* PopcordPanel.swift */; };
+		A10000052C59A00100000001 /* PanelContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000052C59A00100000001 /* PanelContentView.swift */; };
+		A10000062C59A00100000001 /* DiscordWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000062C59A00100000001 /* DiscordWebView.swift */; };
+		A10000072C59A00100000001 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000072C59A00100000001 /* WebViewController.swift */; };
+		A10000082C59A00100000001 /* WebNotificationBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000082C59A00100000001 /* WebNotificationBridge.swift */; };
+		A10000092C59A00100000001 /* HotkeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000092C59A00100000001 /* HotkeyManager.swift */; };
+		A100000A2C59A00100000001 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100000A2C59A00100000001 /* NotificationManager.swift */; };
+		A100000B2C59A00100000001 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100000B2C59A00100000001 /* SettingsView.swift */; };
+		A100000C2C59A00100000001 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100000C2C59A00100000001 /* SessionManager.swift */; };
+		A100000D2C59A00100000001 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100000D2C59A00100000001 /* OnboardingView.swift */; };
+		A100000F2C59A00100000001 /* AppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100000F2C59A00100000001 /* AppLogger.swift */; };
+		A10000102C59A00100000001 /* URLValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000102C59A00100000001 /* URLValidator.swift */; };
+		A10000172C59A00100000001 /* EmbeddedSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000172C59A00100000001 /* EmbeddedSettingsView.swift */; };
+		A10000182C59A00100000001 /* EmbeddedOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000182C59A00100000001 /* EmbeddedOnboardingView.swift */; };
+		A10000192C59A00100000001 /* PerformanceOptimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000192C59A00100000001 /* PerformanceOptimizer.swift */; };
+		A10000202C59A00100000001 /* UpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000202C59A00100000001 /* UpdateManager.swift */; };
+		A10000212C59A00100000001 /* UpdateBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000212C59A00100000001 /* UpdateBannerView.swift */; };
+		A10000112C59A00100000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10000112C59A00100000001 /* Assets.xcassets */; };
+		A10000122C59A00100000001 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F10000122C59A00100000001 /* WebKit.framework */; };
+		A10000132C59A00100000001 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F10000132C59A00100000001 /* Carbon.framework */; };
+		A10000142C59A00100000001 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F10000142C59A00100000001 /* UserNotifications.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B10000012C59A00100000001 /* Popcord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Popcord.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F10000012C59A00100000001 /* PopcordApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopcordApp.swift; sourceTree = "<group>"; };
+		F10000022C59A00100000001 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		F10000032C59A00100000001 /* MenuBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarController.swift; sourceTree = "<group>"; };
+		F10000042C59A00100000001 /* PopcordPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopcordPanel.swift; sourceTree = "<group>"; };
+		F10000052C59A00100000001 /* PanelContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelContentView.swift; sourceTree = "<group>"; };
+		F10000062C59A00100000001 /* DiscordWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscordWebView.swift; sourceTree = "<group>"; };
+		F10000072C59A00100000001 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		F10000082C59A00100000001 /* WebNotificationBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebNotificationBridge.swift; sourceTree = "<group>"; };
+		F10000092C59A00100000001 /* HotkeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyManager.swift; sourceTree = "<group>"; };
+		F100000A2C59A00100000001 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		F100000B2C59A00100000001 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F100000C2C59A00100000001 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		F100000D2C59A00100000001 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		F100000F2C59A00100000001 /* AppLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogger.swift; sourceTree = "<group>"; };
+		F10000102C59A00100000001 /* URLValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLValidator.swift; sourceTree = "<group>"; };
+		F10000172C59A00100000001 /* EmbeddedSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedSettingsView.swift; sourceTree = "<group>"; };
+		F10000182C59A00100000001 /* EmbeddedOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedOnboardingView.swift; sourceTree = "<group>"; };
+		F10000192C59A00100000001 /* PerformanceOptimizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceOptimizer.swift; sourceTree = "<group>"; };
+		F10000202C59A00100000001 /* UpdateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateManager.swift; sourceTree = "<group>"; };
+		F10000212C59A00100000001 /* UpdateBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBannerView.swift; sourceTree = "<group>"; };
+		F10000112C59A00100000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F10000122C59A00100000001 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		F10000132C59A00100000001 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		F10000142C59A00100000001 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		F10000152C59A00100000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F10000162C59A00100000001 /* Popcord.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Popcord.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C10000012C59A00100000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000122C59A00100000001 /* WebKit.framework in Frameworks */,
+				A10000132C59A00100000001 /* Carbon.framework in Frameworks */,
+				A10000142C59A00100000001 /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		G10000012C59A00100000001 = {
+			isa = PBXGroup;
+			children = (
+				G10000022C59A00100000001 /* Popcord */,
+				G100000C2C59A00100000001 /* Frameworks */,
+				B10000012C59A00100000001 /* Popcord.app */,
+			);
+			sourceTree = "<group>";
+		};
+		G10000022C59A00100000001 /* Popcord */ = {
+			isa = PBXGroup;
+			children = (
+				G10000032C59A00100000001 /* App */,
+				G10000042C59A00100000001 /* MenuBar */,
+				G10000052C59A00100000001 /* WebHost */,
+				G10000062C59A00100000001 /* Hotkey */,
+				G10000072C59A00100000001 /* Notifications */,
+				G10000082C59A00100000001 /* Settings */,
+				G10000092C59A00100000001 /* Onboarding */,
+				G100000B2C59A00100000001 /* Support */,
+				F10000112C59A00100000001 /* Assets.xcassets */,
+				F10000152C59A00100000001 /* Info.plist */,
+				F10000162C59A00100000001 /* Popcord.entitlements */,
+			);
+			path = Popcord;
+			sourceTree = "<group>";
+		};
+		G10000032C59A00100000001 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F10000012C59A00100000001 /* PopcordApp.swift */,
+				F10000022C59A00100000001 /* AppState.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		G10000042C59A00100000001 /* MenuBar */ = {
+			isa = PBXGroup;
+			children = (
+				F10000032C59A00100000001 /* MenuBarController.swift */,
+				F10000042C59A00100000001 /* PopcordPanel.swift */,
+				F10000052C59A00100000001 /* PanelContentView.swift */,
+			);
+			path = MenuBar;
+			sourceTree = "<group>";
+		};
+		G10000052C59A00100000001 /* WebHost */ = {
+			isa = PBXGroup;
+			children = (
+				F10000062C59A00100000001 /* DiscordWebView.swift */,
+				F10000072C59A00100000001 /* WebViewController.swift */,
+				F10000082C59A00100000001 /* WebNotificationBridge.swift */,
+			);
+			path = WebHost;
+			sourceTree = "<group>";
+		};
+		G10000062C59A00100000001 /* Hotkey */ = {
+			isa = PBXGroup;
+			children = (
+				F10000092C59A00100000001 /* HotkeyManager.swift */,
+			);
+			path = Hotkey;
+			sourceTree = "<group>";
+		};
+		G10000072C59A00100000001 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				F100000A2C59A00100000001 /* NotificationManager.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		G10000082C59A00100000001 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F100000B2C59A00100000001 /* SettingsView.swift */,
+				F100000C2C59A00100000001 /* SessionManager.swift */,
+				F10000172C59A00100000001 /* EmbeddedSettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		G10000092C59A00100000001 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				F100000D2C59A00100000001 /* OnboardingView.swift */,
+				F10000182C59A00100000001 /* EmbeddedOnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		G100000B2C59A00100000001 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				F100000F2C59A00100000001 /* AppLogger.swift */,
+				F10000102C59A00100000001 /* URLValidator.swift */,
+				F10000192C59A00100000001 /* PerformanceOptimizer.swift */,
+				F10000202C59A00100000001 /* UpdateManager.swift */,
+				F10000212C59A00100000001 /* UpdateBannerView.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		G100000C2C59A00100000001 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F10000122C59A00100000001 /* WebKit.framework */,
+				F10000132C59A00100000001 /* Carbon.framework */,
+				F10000142C59A00100000001 /* UserNotifications.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		T10000012C59A00100000001 /* Popcord */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = L10000012C59A00100000001 /* Build configuration list for PBXNativeTarget "Popcord" */;
+			buildPhases = (
+				S10000012C59A00100000001 /* Sources */,
+				C10000012C59A00100000001 /* Frameworks */,
+				R10000012C59A00100000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			name = Popcord;
+			productName = Popcord;
+			productReference = B10000012C59A00100000001 /* Popcord.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		P10000012C59A00100000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					T10000012C59A00100000001 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = L10000022C59A00100000001 /* Build configuration list for PBXProject "Popcord" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = G10000012C59A00100000001;
+			productRefGroup = G10000012C59A00100000001;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				T10000012C59A00100000001 /* Popcord */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		R10000012C59A00100000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000112C59A00100000001 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		S10000012C59A00100000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000012C59A00100000001 /* PopcordApp.swift in Sources */,
+				A10000022C59A00100000001 /* AppState.swift in Sources */,
+				A10000032C59A00100000001 /* MenuBarController.swift in Sources */,
+				A10000042C59A00100000001 /* PopcordPanel.swift in Sources */,
+				A10000052C59A00100000001 /* PanelContentView.swift in Sources */,
+				A10000062C59A00100000001 /* DiscordWebView.swift in Sources */,
+				A10000072C59A00100000001 /* WebViewController.swift in Sources */,
+				A10000082C59A00100000001 /* WebNotificationBridge.swift in Sources */,
+				A10000092C59A00100000001 /* HotkeyManager.swift in Sources */,
+				A100000A2C59A00100000001 /* NotificationManager.swift in Sources */,
+				A100000B2C59A00100000001 /* SettingsView.swift in Sources */,
+				A100000C2C59A00100000001 /* SessionManager.swift in Sources */,
+				A100000D2C59A00100000001 /* OnboardingView.swift in Sources */,
+				A100000F2C59A00100000001 /* AppLogger.swift in Sources */,
+				A10000102C59A00100000001 /* URLValidator.swift in Sources */,
+				A10000172C59A00100000001 /* EmbeddedSettingsView.swift in Sources */,
+				A10000182C59A00100000001 /* EmbeddedOnboardingView.swift in Sources */,
+				A10000192C59A00100000001 /* PerformanceOptimizer.swift in Sources */,
+				A10000202C59A00100000001 /* UpdateManager.swift in Sources */,
+				A10000212C59A00100000001 /* UpdateBannerView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		X10000012C59A00100000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = Popcord/Popcord.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Popcord/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chloe.popcord;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		X10000022C59A00100000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = Popcord/Popcord.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = Popcord/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chloe.popcord;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		X10000032C59A00100000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+			};
+			name = Debug;
+		};
+		X10000042C59A00100000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		L10000012C59A00100000001 /* Build configuration list for PBXNativeTarget "Popcord" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				X10000012C59A00100000001 /* Debug */,
+				X10000022C59A00100000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		L10000022C59A00100000001 /* Build configuration list for PBXProject "Popcord" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				X10000032C59A00100000001 /* Debug */,
+				X10000042C59A00100000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = P10000012C59A00100000001 /* Project object */;
+}
