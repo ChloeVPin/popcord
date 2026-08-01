@@ -94,7 +94,7 @@ public struct PanelContentView: View {
                     .transition(.move(edge: .trailing).combined(with: .opacity))
             }
         }
-        .frame(width: appState.panelWidth, height: appState.panelHeight)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Material.regular)
         .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
         .overlay(

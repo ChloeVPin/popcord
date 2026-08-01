@@ -17,8 +17,10 @@ public final class PopcordPanel: NSPanel {
         self.hasShadow = true
         self.isMovableByWindowBackground = true
         self.minSize = NSSize(width: 360, height: 480)
+        self.maxSize = NSSize(width: 1400, height: 1200)
         self.isReleasedWhenClosed = false
         self.hidesOnDeactivate = false
+        self.showsResizeIndicator = true
     }
     
     public override var canBecomeKey: Bool { true }
