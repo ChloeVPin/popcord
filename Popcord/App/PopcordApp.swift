@@ -34,5 +34,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         
         // 4. Initial Navigation to Discord Home
         AppState.shared.navigateToHome()
+        
+        // 5. Automatically check for updates on launch
+        UpdateManager.shared.checkForUpdates()
     }
 }

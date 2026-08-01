@@ -108,6 +108,7 @@ public final class MenuBarController: NSObject, NSWindowDelegate {
         
         AppState.shared.isPanelVisible = true
         PerformanceOptimizer.shared.onPopoverShown(webView: WebViewController.shared.webView)
+        UpdateManager.shared.checkForUpdates()
     }
     
     public func hidePanel() {
