@@ -1,70 +1,82 @@
 # Popcord 🍿
 
-> **A Native macOS Menu Bar Companion for Discord**  
-> Click or hit the global hotkey (`⌃⌥⌘D`) to open a small, resizable native panel hosting full Discord Web, deep-linked directly to your primary channel.
+<p align="center">
+  <img src="Popcord/Assets.xcassets/AppIcon.appiconset/icon_512x512.png" width="128" height="128" alt="Popcord App Icon" />
+</p>
+
+<h3 align="center">
+  A Free, Native macOS Menu Bar Companion for Discord
+</h3>
+
+<p align="center">
+  <a href="https://github.com/ChloeVPin/popcord/actions"><img src="https://img.shields.io/badge/build-passing-brightgreen?style=flat-square&logo=apple" alt="Build Status" /></a>
+  <a href="https://developer.apple.com/macos/"><img src="https://img.shields.io/badge/platform-macOS%2014.0%2B-blue?style=flat-square&logo=apple" alt="Platform" /></a>
+  <a href="https://swift.org"><img src="https://img.shields.io/badge/swift-5.0%2B-orange?style=flat-square&logo=swift" alt="Swift" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-purple?style=flat-square" alt="License" /></a>
+  <a href="https://github.com/ChloeVPin/popcord/releases"><img src="https://img.shields.io/badge/updates-automatic%20in--app-5865F2?style=flat-square&logo=github" alt="Auto Updates" /></a>
+</p>
 
 ---
 
-## Features
+## 🚀 Overview
 
-- **Menu Bar Companion:** Instant access to full Discord Web from a compact native popover panel.
-- **Primary Channel Deep-Linking:** Automatically lands on your primary guild channel or DM when shown.
-- **Global Hotkey:** Rebindable global shortcut (`⌃⌥⌘D` default) to toggle show/hide from any application.
-- **Native Notifications & Badge:** Intercepts WebKit notifications and title unreads to present macOS system banners and a red menu bar icon badge.
-- **Full Discord Capabilities:** Video/voice channels, media capture (mic/camera), file uploads/downloads, popups, and persistent login sessions.
-- **Privacy & Security:** Runs 100% on-device inside WebKit; no account system or token-scraping proxy server.
-- **Modular Licensing:** Integrated 14-day trial and Keychain-backed one-time paid license gate ($9).
+**Popcord** brings your Discord messages, voice channels, and DMs straight to your macOS status bar. Built natively using **SwiftUI**, **AppKit**, and **WebKit**, Popcord lives in your menu bar and pops open instantly with a single click or keyboard shortcut.
+
+- **Zero Bloat:** Lightweight, fast, and stays out of your workspace until you need it.
+- **100% On-Device Privacy:** Direct WebKit container execution — no proxy servers, zero telemetry, no token scraping.
+- **Free & Open Source:** Completely free under the MIT License.
 
 ---
 
-## Toolchain & Requirements
+## ✨ Features
 
-- **Platform Target:** macOS 14.0+ (`MACOSX_DEPLOYMENT_TARGET = 14.0`)
-- **Verified Toolchain:** Xcode 27.0 / Xcode 26.6 Baseline (Build 27A5218g), Apple Swift 6.4 Compiler with Swift 6 Concurrency support.
-- **Dependencies:** Built cleanly with native macOS frameworks (`WebKit`, `AppKit`, `SwiftUI`, `Carbon`, `UserNotifications`, `ServiceManagement`, `Security`).
+- **🍿 Menu Bar Companion:** Instant popover panel hosting full Discord Web with persistent login sessions.
+- **🔄 Seamless In-App Updates:** Check, download, patch, and restart automatically inside the app — no browser redirects.
+- **🎨 Adaptive System Appearance:** Automatically matches your macOS Light Mode and Dark Mode preference.
+- **⌨️ Global Keyboard Shortcut:** Press `⌃⌥⌘D` (customizable) to toggle Popcord from anywhere in macOS.
+- **🔔 Native System Banners & Unread Badges:** Intercepts mentions to send native macOS notifications and updates a high-contrast red badge dot on your menu bar icon.
+- **🎙️ Full Audio, Video & Camera Support:** Voice channels, video calls, screen sharing, and media file uploads/downloads.
+- **⚙️ Native HIG Settings:** Single-line form controls following Apple’s Human Interface Guidelines.
+- **📜 Rich Markdown Changelog:** View rendered release notes directly in the settings panel (`MarkdownView`).
 
 ---
 
-## How to Build & Run
+## 🛠️ Toolchain & Requirements
 
-### 1. Xcode Build Command Line
+| Requirement | Specification |
+| :--- | :--- |
+| **Operating System** | macOS 14.0 (Sonoma) or newer |
+| **Language** | Swift 5.0+ (`@MainActor`, `async/await`, `Combine`) |
+| **Frameworks** | `SwiftUI`, `AppKit`, `WebKit`, `Carbon`, `UserNotifications` |
+| **Build System** | Xcode 15.0+ / `xcodebuild` |
+
+---
+
+## 🔨 Building from Source
+
 ```bash
-# Clone or navigate to directory
-cd /path/to/popcord
+# 1. Clone repository
+git clone https://github.com/ChloeVPin/popcord.git
+cd popcord
 
-# Build Debug target
+# 2. Build Debug binary
 xcodebuild -project Popcord.xcodeproj -scheme Popcord -configuration Debug build
 ```
 
-### 2. Open in Xcode
-1. Open `Popcord.xcodeproj` in Xcode.
-2. Select target **Popcord** and destination **My Mac**.
-3. Press `⌘R` to build and run.
+Or open `Popcord.xcodeproj` in Xcode and press `⌘R`.
 
 ---
 
-## Distribution, Entitlements & Notarization
+## 🔒 Security & Entitlements
 
-Popcord is configured with distribution-ready sandboxed entitlements:
-- `com.apple.security.network.client` (Network client)
-- `com.apple.security.files.user-selected.read-write` (File upload/download)
-- `com.apple.security.device.camera` & `microphone` (Voice & video support)
+Popcord runs in Apple’s hardened runtime sandbox with explicitly scoped entitlements:
 
-### Notarization & Direct Distribution
-For direct Developer ID distribution outside the Mac App Store:
-```bash
-# Archive build
-xcodebuild -project Popcord.xcodeproj -scheme Popcord -configuration Release archive -archivePath ./build/Popcord.xcarchive
-
-# Notarize via notarytool
-xcrun notarytool submit ./build/Popcord.zip --keychain-profile "DeveloperID" --wait
-```
+- `com.apple.security.network.client`: Secure HTTPS web connections to Discord servers.
+- `com.apple.security.files.user-selected.read-write`: User-initiated file uploads and downloads.
+- `com.apple.security.device.camera` & `microphone`: Hardware access for voice and video channels.
 
 ---
 
-## Authoritative Documentation & References
+## 📄 License
 
-- [Apple Human Interface Guidelines - Menus & Status Items](https://developer.apple.com/design/human-interface-guidelines/the-menu-bar/)
-- [WebKit WKWebView Documentation](https://developer.apple.com/documentation/webkit/wkwebview)
-- [Apple ServiceManagement SMAppService](https://developer.apple.com/documentation/servicemanagement/smappservice)
-- [Discord Developer Terms of Service](https://support-dev.discord.com/hc/en-us/articles/8563934450327-Discord-Developer-Terms-of-Service)
+Popcord is distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.

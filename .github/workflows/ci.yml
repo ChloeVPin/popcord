@@ -1,0 +1,27 @@
+name: Popcord CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    name: Build & Verify
+    runs-on: macos-14
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_15.4.app/Contents/Developer
+
+      - name: Build Debug Scheme
+        run: |
+          xcodebuild -project Popcord.xcodeproj -scheme Popcord -configuration Debug build CODE_SIGNING_ALLOWED=NO
+
+      - name: Build Release Scheme
+        run: |
+          xcodebuild -project Popcord.xcodeproj -scheme Popcord -configuration Release build CODE_SIGNING_ALLOWED=NO
