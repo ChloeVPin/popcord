@@ -4,7 +4,7 @@
 
 <br />
 
-<img src="docs/popcord-macos-icon.png" width="128" height="128" alt="Popcord macOS App Icon" />
+<img src="docs/logo.png" width="128" height="128" alt="Popcord Logo" />
 
 <br />
 <br />
